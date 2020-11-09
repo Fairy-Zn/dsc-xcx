@@ -1,0 +1,31 @@
+<!--pages/demo1/demo1.wxml-->
+<view class="category-header">
+  <view class="category-input">
+    <view class="iconfont icon-search"></view>
+    <!-- <input type="text" class="category-in" placeholder="输入关键词"> -->
+    <navigator class="category-in" url="../search/search">输入关键词</navigator>
+  </view>
+</view>
+<view class="category-container" style="height:{{catH}}px">
+  <view class="category-left">
+    <view class="left-container" wx:for="{{leftListdatas}}" wx:key="index" bindtap="changeList" data-index="{{index}}">
+      <view class="{{activeIndex==index?'active':''}}">{{item.cat_name}}</view>
+    </view>
+  </view>
+  <view class="category-right">
+    <scroll-view scroll-y="true" class="scroll-right">
+      <view class="image-top" >
+        <image src="{{imgsrc}}"></image>
+        <view wx:for="{{rightListDatas}}" wx:key="index" wx:for-item="list">
+          <view style="width:100%;height:25px;line-height:25px;font-size:28rpx;text-align:center;margin:11px 0;">-{{list.cat_name}}-</view>
+          <view style="display:flex;flex-wrap:wrap">
+            <navigator style="width:33%;height:82px;margin-bottom:20px;text-align:center" wx:for="{{list.child}}" wx:key="index" url="/pages/goodsList/goodsList?cat_id={{item.cat_id}}">
+              <image src="{{item.touch_icon}}" style="width:52px;height:52px"></image>
+              <view style="font-size:24rpx;margin-top:10rpx;color:#777">{{item.cat_name}}</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

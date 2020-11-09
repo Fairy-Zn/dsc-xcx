@@ -1,0 +1,330 @@
+/* pages/demo4/demo4.wxss */
+.header{
+  width: 100%;
+  padding-top: 12rpx;
+  height: 64rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.header input{
+  width: 85%;
+  margin-left: 3%;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.header .icon-search{
+  position: absolute;
+  top: 26rpx;
+  right: 122rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.header .icon-home-xiaoxi{
+  position: absolute;
+  top: 18rpx;
+  right: 30rpx;
+  color: #fff;
+  font-size: 40rpx;
+}
+.list{
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  top: 76rpx;
+  left: 0;
+  z-index: 10;
+  display: flex;
+}
+.list .navScroll{
+  width: 78%;
+  height: 100%;
+  white-space: nowrap;
+  margin-left: 3%;
+}
+.list .navScroll .navContent{
+  height: 100%;
+  display: flex;
+}
+.list .navScroll .navContent view{
+  float: left;
+  width: 56px;
+  padding: 0 15px 0 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+.list .navScroll .navContent .active{
+  font-weight: 700;
+}
+.list .navScroll .navContent .active::after{
+  width: 24rpx;
+  height: 12rpx;
+  border-radius: 0 0 100% 100%;
+  border: 4rpx solid #fff;
+  border-top: 0;
+  padding: 0;
+  margin-left: 50%;
+  /* font-weight: 400;
+  position: absolute;
+  top: 22px;
+  left: 6px; */
+}
+/* .list .navScroll .navContent .active text::after{
+  content: "";
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 0 0 50% 50%;
+  border: 4rpx solid #fff;
+  border-top: 0;
+} */
+.list .navIcon{
+  width: 15%;
+  margin-left: 2%;
+  font-size: 28rpx;
+  display: flex;
+  color: #fff;
+  /* vertical-align: bottom; */
+}
+.list .navIcon view{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.swiper-bg{
+  width: 100%;
+  height: 120rpx;
+  border-radius: 0 0 40rpx 40rpx;
+  position: absolute;
+  top: 154rpx;
+  left: 0;
+}
+.swiper-top .swiper{
+  width: 94%;
+  height: 240rpx;
+  margin-left: 3%;
+  margin-top: 158rpx;
+  border-radius: 20rpx;
+}
+.swiper-top .swiper swiper-item{
+  width: 100%;
+  height: 240rpx;
+  border-radius: 20rpx;
+}
+.swiper-top .swiper image{
+  width: 100%;
+  height: 240rpx;
+  border-radius: 20rpx;
+}
+.tab-nav{
+  width: 2000rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border: 1px solid #cccccc;
+  font-size: 28rpx;
+  transition: all 0.5s linear;
+}
+.tab-nav .tab-item{
+  float: left;
+  width: 150rpx;
+  text-align: center;
+}
+.tab-nav .active{
+  color: red;
+  font-weight: 700;
+}
+.swiper-container{
+  width: 94%;
+  height: 500rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  margin-left: 3%;
+  border: 1px solid #efefef;
+  /* box-shadow: 10rpx 10rpx 6rpx #efefef; */
+}
+.swiper-list{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.swiper-list view{
+  width: 20%;
+  height: 190rpx;
+  text-align: center;
+  float: left;
+}
+.swiper-list image{
+  width: 95%;
+  height: 134rpx;
+  margin-bottom: -20rpx;
+}
+.swiper-list text{
+  font-size: 24rpx;
+}
+.swiper-news{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.swiper-news-container{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.noPrice{
+  width: 94%;
+  margin-left: 3%;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.noPrice image{
+  width: 100%;
+  height: 349rpx;
+  border-radius: 20rpx;
+}
+.seckill{
+  width: 94%;
+  height: 740rpx;
+  border: 1px solid #efefef;
+  margin-left: 3%;
+  border-radius: 20rpx;
+}
+.seckill .seckill-top{
+  width: 100%;
+  padding: 44rpx 20rpx 24rpx 30rpx;
+  height: 111rpx;
+  box-sizing: border-box;
+  background: #efefef;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.seckill .seckill-top image{
+  width: 200rpx;
+  height: 43rpx;
+  float: left;
+}
+.seckill .seckill-top view{
+  float: right;
+  font-size: 24rpx;
+  width: 347rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+}
+.seckill .seckill-top view text{
+  width: 46rpx;
+  display: inline-block;
+  text-align: center;
+}
+.seckill .seckill-top view .remaining{
+  background: #f00;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+}
+.seckill .seckill-top view .colon{
+  color: #f00;
+  width: 20rpx;
+  font-weight: 700;
+}
+.seckill .seckill-title{
+  width: 100%;
+  height: 96rpx;
+  padding: 10rpx 0rpx;
+  display: flex;
+}
+.seckill .seckill-title .seckill-tle{
+  width: 25%;
+  text-align: center;
+  font-size: 24rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.seckill .seckill-title .active{
+  color: #f00;
+  border-bottom: 2rpx solid #f00;
+  font-size: 28rpx;
+}
+.seckill .seckill-title .seckill-tle view{
+  height: 48rpx;
+  line-height: 48rpx;
+}
+.seckill .seckill-title .seckill-tle .seckill-tle-top{
+  font-weight: 700;
+}
+.seckill-content{
+  width: 100%;
+  height: 376rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.seckill-content .seckill-content-scroll{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+.seckill-content .seckill-content-view{
+  width: 204rpx;
+  height: 356rpx;
+  padding: 10rpx 6rpx;
+  text-align: center;
+  font-size: 24rpx;
+  float: left;
+  position: relative;
+}
+.seckill-content .seckill-content-view .seckill-content-name{
+  width: 100%;
+  overflow: hidden;    
+text-overflow:ellipsis;    
+white-space: nowrap; 
+}
+.seckill-content .seckill-content-view .reimage{
+  width: 100rpx;
+  height: 37rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 6rpx;
+}
+.seckill-content .seckill-content-view .reimage image{
+  width: 100rpx;
+  height: 37rpx;
+}
+.seckill-content .seckill-content-scroll image{
+  width: 204rpx;
+  height: 204rpx;
+}
+.seckill-content .seckill-content-view view{
+  line-height: 42rpx;
+}
+.loadlist{
+  width: 94%;
+  height: auto;
+  margin-left: 3%;
+}
+.loadlist .list-wrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.loadlist .list-wrap .list-item{
+  width: 50%;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.list-item image{
+  width: 340rpx;
+  height: 340rpx;
+}
+.list-wrap .list-item .title{
+  height: 80rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}

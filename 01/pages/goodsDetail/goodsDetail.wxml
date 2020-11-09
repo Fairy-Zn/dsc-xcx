@@ -1,0 +1,143 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<import src="/wxParse/wxParse.wxml"></import>
+<!-- 导航栏 -->
+<view class="goodsNav">
+  <view class="goodsNav-item {{activeIndex == index ?'active':''}}" data-id="detail{{index}}" data-index="{{index}}"
+    wx:for="{{titleArr}}" wx:key="index" bindtap="changeDetail">{{item}}</view>
+</view>
+<!-- 详情页内容 -->
+<scroll-view scroll-y="true" style="height:{{contentH}}px" bindscroll="scrollFn" scroll-into-view="{{goId}}">
+  <view class="goodsDetail-top" id="detail0">
+    <swiper class="swiper-container" indicator-dots="true" indicator-color="#000" indicator-active-color="#999"
+      autoplay="true" circular="true">
+      <swiper-item wx:for="{{goodsDetailDatas}}" wx:key="index">
+        <image src="{{item.img_url}}"></image>
+      </swiper-item>
+    </swiper>
+    <view class="goodsPrice">
+      <view class="goods-price">
+        {{goodsDatas.shop_price_formated}}
+        <text>{{goodsDatas.market_price_formated}}</text>
+      </view>
+    </view>
+    <view class="goodsVIP">
+      <view class="goods-vip">
+        <image src="https://x.dscmall.cn/static/dist/img/icon-vip.png"></image>
+        <text class="vip-title">高级VIP享超值优惠价</text>
+        <text class="vip-price">{{goodsDatas.shop_price_formated}}</text>
+        <view class="buyVIP">
+          立即开通
+          <text class="iconfont icon-more" style="font-size:20rpx"></text>
+        </view>
+      </view>
+    </view>
+    <view class="goodsName">
+      <view>{{goodsDatas.goods_name}}</view>
+    </view>
+    <view class="goodsDescripe">
+      <view>累计销量{{goodsDatas.sales_volume}}</view>
+      <view>库存{{goodsDatas.goods_number}}</view>
+      <view>
+        <text style="margin-right:10rpx">{{shopDetail.city_name}}</text>
+        <text>{{shopDetail.province_name}}</text>
+      </view>
+    </view>
+    <view class="goodsServer">
+      <view class="goods-server">服务：</view>
+      <view class="goods-goods-server-detail">正品保证 七天无理由退换 闪速配送</view>
+    </view>
+    <view class="goodsChose" bindtap="showMask">
+      <view class="goodsChose-detail">
+        <view class="goods-chose">已选：</view>
+        <view class="goods-chose-num">{{buyNum}}个</view>
+      </view>
+      <view class="van-icon van-icon-arrow van-cell__right-icon"></view>
+    </view>
+    <view class="shipping-address">
+      <view class="shipping-add">
+        <view>送至：</view>
+      </view>
+      <view class="shipping-freight">
+        <view class="freight">运费：</view>
+        <view class="notSupport">该地区不支持配送</view>
+      </view>
+    </view>
+  </view>
+  <view class="goodsDetail-detail" id="detail1">
+    <view class="detail-title">商品详情</view>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <view class="goodsDetail-recommend" id="detail2">
+    <view class="recommend-title">猜你喜欢</view>
+    <scroll-view scroll-y="true">
+      <view class="recommend-list">
+        <view class="recommend-item">
+          <view style="width: 47%;margin: 1%;border-radius:10rpx;background:#fff" wx:for="{{recommendDatas}}"
+            wx:key="index">
+            <image src="{{item.goods_thumb}}"></image>
+            <view class="recommend-item-title">{{item.goods_name}}</view>
+            <view class="recommend-price">{{item.shop_price_formated}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="goodsDetail-comment" id="detail3">
+    <view class="commment-title">评论</view>
+  </view>
+</scroll-view>
+<!-- 底部 -->
+<view class="goods-footer">
+  <view class="footer-left">
+    <view class="customer-service">
+      <view class="iconfont icon-home-xiaoxi"></view>
+      <view class="footer-title">客服</view>
+    </view>
+    <view class="footer-collection">
+      <view class="iconfont icon-xin"></view>
+      <view class="footer-title">收藏</view>
+    </view>
+    <view class="footer-cart">
+      <navigator bindtap="switchTab">
+        <view class="iconfont icon-gouwuche" style="font-size:48rpx"></view>
+        <view class="footer-title">购物车</view>
+        <view class="circle-num">{{totalNum}}</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="footer-right">
+    <view class="footer-add" bindtap="showMask">加入购物车</view>
+    <view class="footer-buy">立即购买</view>
+  </view>
+</view>
+<!-- 弹窗蒙版 -->
+<view class="mask" wx:if="{{showMask}}" bindtap="closeMask"></view>
+<view class="screen-wrap" wx:if="{{showMask}}">
+  <view class="iconfont icon-close close" bindtap="closeMask"></view>
+  <view class="screen-content">
+    <view class="screen-goods">
+      <view class="screen-img">
+        <image src="{{goodsDatas.goods_img}}"></image>
+      </view>
+      <view class="screen-title">
+        <view class="title">{{goodsDatas.goods_name}}</view>
+        <view class="screen-price">{{goodsDatas.shop_price_formated}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="buy-wrap">
+    <view class="buy-num">数量</view>
+    <view class="buy-number">
+      <view class="del" bindtap="changeCartNum" data-num="0">-</view>
+      <view class="num">{{buyNum}}</view>
+      <view class="add" bindtap="changeCartNum" data-num="1">+</view>
+    </view>
+  </view>
+  <view class="screen-buy">
+    <view class="buy-btn">立即购买</view>
+    <view class="buy-cart" bindtap="addCart">加入购物车</view>
+  </view>
+</view>
+<!-- 加载蒙版 -->
+<view class="lodaing-mask"></view>
+<!--  {{flag == true?'flag':''}} -->

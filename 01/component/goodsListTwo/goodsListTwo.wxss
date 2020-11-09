@@ -1,0 +1,48 @@
+/* component/goodsListTwo/goodsListTwo.wxss */
+.goodslistTwo-container{
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+}
+.goodslistTwo-container .goodslistTwo-content{
+  width: 47%;
+  margin: 1.5%;
+  background-color: #fff;
+  height: 285px;
+  border-radius: 10rpx;
+}
+.goodslistTwo-container .goodslistTwo-content .goodslistTwo-img{
+  width: 100%;
+  height: 178.6px;
+  border-radius: 10rpx;
+}
+.goodslistTwo-container .goodslistTwo-content .goodslistTwo-title{
+  width: 100%;
+  height: 38px;
+  line-height: 19px;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.goodslistTwo-container .goodslistTwo-content .goodslistTwo-price{
+  width: 100%;
+  height: 18px;
+  padding: 6px 0;
+  color: #f00;
+  font-size: 28rpx;
+}
+.goodslistTwo-container .goodslistTwo-content .goodslistTwo-botttom{
+  color: #f92028;
+  font-size: 24rpx;
+  float: left;
+}
+.goodslistTwo-container .goodslistTwo-content .goodslistTwo-mall{
+  width: 15px;
+  height: 16px;
+  float: right;
+}

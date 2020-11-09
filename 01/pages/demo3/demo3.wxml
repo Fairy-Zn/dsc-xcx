@@ -1,0 +1,47 @@
+<!--pages/demo3/demo3.wxml-->
+<scroll-view class="cart-container" scroll-y="true">
+  <view class="cart-content">
+    <view class="cart-list" wx:for="{{cartListDatas}}" wx:key="index">
+      <view class="goods-content">
+        <view class="choose-icon" bindtap="checkRadio" data-index="{{index}}"> 
+          <icon type="success_circle" wx:if="{{item.isSelect}}"></icon>
+          <icon type="circle" wx:else></icon>
+        </view>
+        <view class="goods-detail">
+          <view class="goods-img">
+            <image src="{{item.goods_img}}"></image>
+          </view>
+          <view class="goodsDetails">
+            <view class="goods-name">{{item.goods_name}}</view>
+            <view class="goods-num">
+              <view class="goods-price">￥{{item.shop_price}}</view>
+              <view class="goods-change-num">
+                <text style="border-right:1px solid #efefef;" bindtap="reduce" data-index="{{index}}">-</text>
+                <view style="margin:0 20rpx">{{item.buyNum}}</view>
+                <text style="border-left:1px solid #efefef;" bindtap="addNum" data-index="{{index}}">+</text>
+              </view>
+              <view class="iconfont icon-xin"></view>
+              <view class="iconfont icon-delete" bindtap="deleCart" data-index="{{index}}"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cart-nothing">
+    
+  </view>
+  <view class="cart-guess">——猜你喜欢——</view>
+</scroll-view>
+<view class="footer">
+  <view class="cart-icon" bindtap="selectAllFn">
+    <icon type="success_circle" wx:if="{{isSelectAll}}"></icon>
+    <icon type="circle" wx:else></icon>
+    <view>全选</view>
+  </view>
+  <view class="totalPrice">
+    <view class="sum">合计：￥{{totalPrice}}</view>
+    <view class="save">(不含运费，已节省￥0.00)</view>
+  </view>
+  <view class="account">去结算</view>
+</view>

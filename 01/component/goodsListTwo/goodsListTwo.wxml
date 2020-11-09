@@ -1,0 +1,17 @@
+<!--component/goodsListTwo/goodsListTwo.wxml-->
+<view class="goodslistTwo-container">
+  <navigator class="goodslistTwo-content" wx:for="{{goodsListDatas}}" wx:key="index" url="../../pages/goodsDetail/goodsDetail?goods_id={{item.goods_id}}">
+    <image src="{{item.goods_thumb}}" class="goodslistTwo-img"></image>
+    <view style="width:100%;height:91px;padding:8px;box-sizing:border-box">
+      <view class="goodslistTwo-title">{{item.goods_name}}</view>
+      <view class="goodslistTwo-price">{{item.shop_price_formated}}</view>
+      <view>
+        <view class="goodslistTwo-botttom">
+          <text style="display:inline-block;    background-color: #fef0f0;padding:2rpx 10rpx;width:52rpx;height:37.6rpx;margin-right:12rpx">进店</text>
+          <text style="color:#999">{{item.sale}}人已购买</text>
+        </view>
+        <image src="../../images/mall-active.png" class="goodslistTwo-mall"></image>
+      </view>
+    </view>
+  </navigator>
+</view>

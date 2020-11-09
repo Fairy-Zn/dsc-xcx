@@ -1,0 +1,189 @@
+<!--pages/demo4/demo4.wxml-->
+<!-- <scroll-view scroll-x="true" scroll-left="{{oLeft}}" scroll-with-animation="true">
+  <view class="tab-nav">
+    <view  wx:for="{{tabNavDatas}}" data-id="{{index}}" bindtap="changeSwiper" wx:key="index"class="tab-item {{currentIndex==index?'active':''}}">{{item.title}}</view>
+  </view>
+</scroll-view>
+<swiper bindchange="changeTab" current="{{currentIndex}}" style="height:150px;background:#ccc">
+  <swiper-item>
+    <view>关注</view>
+    <view>关注</view>
+    <view>关注</view>
+    <view>关注</view>
+    <view>关注</view>
+  </swiper-item>
+  <swiper-item>
+    <view>推荐</view>
+    <view>推荐</view>
+    <view>推荐</view>
+    <view>推荐</view>
+    <view>推荐</view>
+  </swiper-item>
+  <swiper-item>
+    <view>抗疫</view>
+    <view>抗疫</view>
+    <view>抗疫</view>
+    <view>抗疫</view>
+    <view>抗疫</view>
+  </swiper-item>
+  <swiper-item>
+    <view>郑州</view>
+    <view>郑州</view>
+    <view>郑州</view>
+    <view>郑州</view>
+    <view>郑州</view>
+  </swiper-item>
+  <swiper-item>
+    <view>音乐</view>
+    <view>音乐</view>
+    <view>音乐</view>
+    <view>音乐</view>
+    <view>音乐</view>
+  </swiper-item>
+  <swiper-item>
+    <view>视频</view>
+    <view>视频</view>
+    <view>视频</view>
+    <view>视频</view>
+    <view>视频</view>
+  </swiper-item>
+  <swiper-item>
+    <view>小说</view>
+    <view>小说</view>
+    <view>小说</view>
+    <view>小说</view>
+    <view>小说</view>
+  </swiper-item>
+  <swiper-item>
+    <view>动漫</view>
+    <view>动漫</view>
+    <view>动漫</view>
+    <view>动漫</view>
+    <view>动漫</view>
+  </swiper-item>
+  <swiper-item>
+    <view>其他</view>
+    <view>其他</view>
+    <view>其他</view>
+    <view>其他</view>
+    <view>其他</view>
+  </swiper-item>
+</swiper>
+<view>------</view> -->
+<view class="header" style="background:{{ocolor}}">
+  <navigator url="../search/search">
+    <input type="text" placeholder="请输入" />
+  </navigator>
+  <text class="iconfont icon-search"></text>
+  <text class="iconfont icon-home-xiaoxi"></text>
+</view>
+<view class="list" style="background:{{ocolor}}">
+  <scroll-view scroll-x="true" class="navScroll">
+    <view style="width:{{navWid}}rpx" class="navContent">
+      <view wx:for="{{navList}}" wx:key="index" bindtap="changeNav" id="{{item.id}}"
+        class="{{ item.active ==true  ? 'active':''}}">
+        {{item.title}}
+      </view>
+    </view>
+  </scroll-view>
+  <view class="navIcon">
+    <view class="iconfont icon-home-dingjifenlei" style="margin-right:10rpx;font-size:24rpx"></view>
+    <view>分类</view>
+  </view>
+</view>
+<view class="swiper-bg" style="background:{{ocolor}}"></view>
+<view class="swiper-top">
+  <swiper class="swiper" autoplay circular="true" indicator-dots="true" indicator-color="#efefef"
+    indicator-active-color="#f00" bindchange="changeSwipers">
+    <swiper-item wx:for="{{swiperDatas}}" wx:key="index">
+      <image src="{{item.img}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="swiper-container">
+  <view class="swipers">
+    <swiper class="swiper-list" indicator-dots="true" indicator-color="#efefef" indicator-active-color="#f00">
+      <swiper-item>
+        <view wx:for="{{swiperList1}}" wx:key="index">
+          <image src="{{item.img}}"></image>
+          <text>{{item.desc}}</text>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view wx:for="{{swiperList2}}" wx:key="index">
+          <image src="{{item.img}}"></image>
+          <text>{{item.desc}}</text>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view wx:for="{{swiperList3}}" wx:key="index">
+          <image src="{{item.img}}"></image>
+          <text>{{item.desc}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="swiper-news">
+    <hr />
+    <view class="swiper-news-container">
+      <image src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978466633.png"
+        style="width:140rpx;height:62rpx;margin-right:20rpx;"></image>
+      <view style="height:28rpx;width:320rpx;overflow:hidden;margin-top:12rpx;">
+        <swiper autoplay circular="true" style="font-size:24rpx;" class="news-swiper" vertical="true">
+          <swiper-item wx:for="{{newsList}}" wx:key="index">
+            <view>{{item.title}}</view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="noPrice">
+  <image src="{{noPrice}}"></image>
+</view>
+<view class="seckill">
+  <view class="seckill-top">
+    <image
+      src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978468241.png?imageView2/2/format/webp">
+    </image>
+    <view>距结束还剩：
+      <text class="remaining">02</text>
+      <text class="colon">:</text>
+      <text class="remaining">03</text>
+      <text class="colon">:</text>
+      <text class="remaining">50</text>
+    </view>
+  </view>
+  <view class="seckill-title">
+    <view wx:for="{{miaoshadata}}" wx:key="index" class="seckill-tle {{ item.active ==true  ? 'active':''}}"
+      bindtap="changeTime" data-index="{{index}}" id="{{item.id}}">
+      <view class="seckill-tle-top">{{item.time}}</view>
+      <view class="seckill-tle-btm">{{item.title}}</view>
+    </view>
+  </view>
+  <view class="seckill-content">
+    <scroll-view class="seckill-content-scroll" scroll-x="true">
+      <view style="width:{{seckillWid}}rpx;height:100%">
+        <view class="seckill-content-view" wx:for="{{seckillList}}" wx:key="index" style="width:{{seckillWidth}}rpx">
+          <image src="{{item.goods_thumb}}"></image>
+          <view class="reimage">
+            <image src="https://x.dscmall.cn/static/dist/img/seckill-tag.png"></image>
+          </view>
+          <view class="seckill-content-name">{{item.goods_name}}</view>
+          <view style="font-size:28rpx;color:#f00">{{item.sec_price_formated}}</view>
+          <view style="text-decoration:line-through;">{{item.market_price_formated}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="loadlist">
+  <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+    <view class="list-wrap">
+        <navigator class="list-item" wx:for="{{listDatas}}" wx:key="index" url="../goodsDetail/goodsDetail?goods_id={{item.goods_id}}">
+          <image src="{{item.goods_thumb}}"></image>
+          <view class="title">{{item.title}}</view>
+        </navigator>
+    </view>
+  </scroll-view>
+</view>

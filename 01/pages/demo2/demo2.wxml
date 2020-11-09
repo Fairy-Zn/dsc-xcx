@@ -1,0 +1,29 @@
+<!--pages/demo2/demo2.wxml-->
+<view class="find-top">
+  <view class="find-nav">
+    <view class="findNav" wx:for="{{navList}}" wx:key="index">
+      <view class="{{item.active ==true  ? 'active':''}}" id="{{item.id}}" bindtap="changeNav"  data-index="{{index}}">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+<view class="find-container" style="height:{{winH-44}}px">
+  <scroll-view class="find-content" scroll-y="true">
+    <view style="width:calc(100%-20);height:100%;display:flex;text-align:center;padding:20rpx 20rpx 0;flex-wrap:wrap">
+      <view class="list-container" wx:for="{{listDatas}}" wx:key="index">
+        <image src="{{item.img || item.goods_thumb}}" class="list-image"></image>
+        <view class="list-text">{{item.goods_name}}</view>
+        <view class="list-content">
+          <view class="list-left">
+            <image src="{{item.user_picture ||item.logo_thumb}}"></image>
+            <text>{{item.user_name ||item.shop_name}}</text>
+          </view>
+          <view class="list-right">
+            <view class="iconfont icon-find-liulan-alt"></view>
+            <view style="vertical-align: middle;">{{item.dis_browse_num || item.look_num}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="nomore">没有更多了</view>
+    </view>
+  </scroll-view>
+</view>

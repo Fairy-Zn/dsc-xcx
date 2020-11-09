@@ -1,0 +1,130 @@
+/* pages/demo3/demo3.wxss */
+.cart-container{
+  width: 100%;
+  background-color: #efefef;
+}
+.cart-container .cart-content{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+/* 购物车列表 */
+.cart-container .cart-content .goods-content{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rpx;
+}
+.cart-container .cart-content .goods-content .choose-icon{
+  margin-right: 30rpx;
+}
+.cart-container .cart-content .goods-content .goods-detail{
+  width: 88%;
+  height: 200rpx;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  background-color: #fff;
+}
+.cart-container .cart-content .goods-content .goods-detail .goods-img{
+  width: 160rpx;
+  height: 160rpx;
+}
+.cart-container .cart-content .goods-content .goods-detail .goods-img image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.cart-container .cart-content .goods-content .goodsDetails{
+  margin-left: 20rpx;
+  height: 100%;
+  width: 400rpx;
+  font-size: 24rpx;
+}
+.cart-container .cart-content .goods-content .goodsDetails .goods-name{
+  width: 100%;
+  height: 80rpx;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cart-container .cart-content .goods-content .goodsDetails .goods-num{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+.cart-container .cart-content .goods-content .goodsDetails .goods-price{
+  color: #f22;
+}
+.cart-container .cart-content .goods-content .goodsDetails .goods-change-num{
+  display: flex;
+  border: 1px solid #efefef;
+}
+.cart-container .cart-content .goods-content .goodsDetails .goods-change-num text{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+}
+/* 猜你喜欢 */
+.cart-guess{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+/* 底部 */
+.footer{
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}
+.footer .cart-icon{
+  width: 20%;
+  height: 100%;
+  line-height: 88rpx;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: center;
+}
+.footer .cart-icon icon{
+  margin-right: 10rpx;
+  margin-top: 20rpx;
+}
+.footer .totalPrice{
+  width: 50%;
+  height: 88rpx;
+  text-align: right;
+  font-size: 28rpx;
+  padding: 10rpx 10rpx;
+  box-sizing: border-box;
+}
+.footer .totalPrice .sum{
+  color: #f22;
+}
+.footer .totalPrice .save{
+  color: #999;
+  font-size: 24rpx;
+}
+.footer .account{
+  width: 30%;
+  height: 88rpx;
+  background: #f22;
+  color: #fff;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+@import "../../fonts/font_z5lmric8bg/iconfont.wxss"

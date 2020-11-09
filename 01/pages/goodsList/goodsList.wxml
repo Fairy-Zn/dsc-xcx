@@ -1,0 +1,29 @@
+<!--pages/goodsList/goodsList.wxml-->
+<view class="goodsList-header">
+  <view class="goodsList-input">输入搜索关键词</view>
+  <view class="iconfont icon-search"></view>
+  <view class="iconfont icon-pailie"></view>
+</view>
+<view class="goodlist-nav">
+  <view class="goodlist-items">
+    综合
+    <text class="iconfont icon-xiajiantou"></text>
+  </view>
+  <view class="goodlist-items">
+    新品
+  </view>
+  <view class="goodlist-items">
+    销量
+  </view>
+  <view class="goodlist-items">
+    价格
+    <text class="iconfont icon-xiajiantou"></text>
+  </view>
+  <view class="goodlist-items">
+    <text class="iconfont icon-filter"></text>
+    筛选
+  </view>
+</view>
+<scroll-view style="background:#efefef;height:{{goodsH}}px" scroll-y="true" bindscrolltolower="loadMore">
+    <goodsListTwo goodsListDatas="{{goodsListDatas}}"/>
+</scroll-view>
